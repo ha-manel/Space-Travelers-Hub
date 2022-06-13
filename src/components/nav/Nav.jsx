@@ -10,6 +10,10 @@ const Nav = () => {
       path: 'profile',
       text: 'My Profile',
     },
+    {
+      path: 'dragons',
+      text: 'Dragons',
+    },
   ];
 
   return (
