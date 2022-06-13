@@ -12,8 +12,8 @@ const Nav = () => {
     },
     {
       path: 'dragons',
-      text: 'Dragons'
-    }
+      text: 'Dragons',
+    },
   ];
 
   return (
