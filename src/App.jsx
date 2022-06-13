@@ -1,25 +1,15 @@
-import { Navbar, Container } from 'react-bootstrap';
 import './App.css';
-import logo from './assets/logo.png';
+import { Routes, Route } from 'react-router-dom';
+import Nav from './components/nav/Nav';
+import MyProfile from './components/my-profile/MyProfile';
 
 function App() {
   return (
     <div className="App">
-      <Navbar bg="light" variant="light">
-        <Container>
-          <Navbar.Brand href="#rockets">
-            <img
-              alt="Cool logo."
-              src={logo}
-              width="36"
-              height="36"
-              className="d-inline-block align-center"
-            />
-            {' '}
-            <span className="title">Space Travelers&apos; Hub</span>
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
+      <Nav />
+      <Routes>
+        <Route path="/profile" element={<MyProfile />} />
+      </Routes>
     </div>
   );
 }
