@@ -7,12 +7,16 @@ import './Nav.css';
 const Nav = () => {
   const links = [
     {
-      path: 'profile',
-      text: 'My Profile',
+      path: 'rockets',
+      text: 'Rockets',
     },
     {
       path: 'dragons',
       text: 'Dragons',
+    },
+    {
+      path: 'profile',
+      text: 'My Profile',
     },
   ];
 
