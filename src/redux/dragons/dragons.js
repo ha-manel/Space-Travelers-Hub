@@ -36,6 +36,13 @@ function cancelDragonReservation(id) {
 
 export default function dragons(state = [], action) {
   switch (action.type) {
+    case CANCEL_DRAGON_RESERVATION:
+      return state.map((dragon) => {
+        if (dragon.id === action.payload) {
+          return { ...dragon, reserved: false };
+        }
+        return dragon;
+      });
     case DRAGON_RESERVED:
       return state.map((dragon) => {
         if (dragon.id === action.payload) {
