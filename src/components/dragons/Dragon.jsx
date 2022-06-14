@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { reserveDragon } from '../../redux/dragons/dragons';
+import { toggleReservation } from '../../redux/dragons/dragons';
 import styles from './Dragon.module.css';
 
 const Dragon = ({ dragon }) => {
   const dispatch = useDispatch();
 
-  const reserve = () => {
-    dispatch(reserveDragon(dragon.id));
+  const toggleReservationStatus = () => {
+    dispatch(toggleReservation(dragon.id));
   };
 
   return (
@@ -23,8 +23,8 @@ const Dragon = ({ dragon }) => {
           Type:
           {dragon.type}
         </p>
-        {!dragon.reserved && (<button type="button" onClick={reserve}>Reserve Dragon</button>)}
-        {dragon.reserved && (<button type="button" onClick={reserve}>Cancel Reservation</button>)}
+        {!dragon.reserved && (<button type="button" onClick={toggleReservationStatus}>Reserve Dragon</button>)}
+        {dragon.reserved && (<button type="button" onClick={toggleReservationStatus}>Cancel Reservation</button>)}
       </div>
     </li>
   );
@@ -36,7 +36,7 @@ Dragon.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     flickr_images: PropTypes.string.isRequired,
-    reserved: PropTypes.bool,
+    reserved: PropTypes.bool.isRequired,
   }).isRequired,
 };
 
