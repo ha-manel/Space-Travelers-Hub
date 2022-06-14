@@ -53,6 +53,7 @@ const Missions = () => {
                     type="button"
                     className="join-btn"
                     onClick={() => leave(mission.mission_id)}
+                    style={{ color: '#d90429', borderColor: '#d90429' }}
                   >
                     Leave Mission
                   </button>
