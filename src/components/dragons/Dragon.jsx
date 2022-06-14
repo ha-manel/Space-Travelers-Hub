@@ -18,10 +18,13 @@ const Dragon = ({ dragon }) => {
       <div className={styles.dragonInfo}>
         <h2>{dragon.name}</h2>
         <p>
+          {dragon.reserved && (<span className={styles.dragonReservedBadge}>Reserved</span>)}
+          {' '}
           Type:
           {dragon.type}
         </p>
-        <button type="button" onClick={reserve}>Reserve Dragon</button>
+        {!dragon.reserved && (<button type="button" onClick={reserve}>Reserve Dragon</button>)}
+        {dragon.reserved && (<button type="button" onClick={reserve}>Cancel Reservation</button>)}
       </div>
     </li>
   );
@@ -33,6 +36,7 @@ Dragon.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     flickr_images: PropTypes.string.isRequired,
+    reserved: PropTypes.bool,
   }).isRequired,
 };
 
