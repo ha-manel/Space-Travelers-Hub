@@ -19,6 +19,13 @@ async function fetchDragons(dispatch, getState) {
   }
 }
 
+function reserveDragon(id) {
+  return {
+    tyoe: DRAGON_RESERVED,
+    payload: id,
+  }
+}
+
 export default function dragons(state = [], action) {
   switch (action.type) {
     case DRAGON_RESERVED:
@@ -35,4 +42,4 @@ export default function dragons(state = [], action) {
   }
 }
 
-export { fetchDragons };
+export { fetchDragons, reserveDragon };
