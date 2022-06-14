@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const DRAGONS_FETCHED = 'DRAGONS_FETCHED';
+const DRAGONS_FETCHED = 'spacehub/dragons/DRAGONS_FETCHED';
 
 async function fetchDragons(dispatch, getState) {
   const { dragons: currentDragons } = getState();
