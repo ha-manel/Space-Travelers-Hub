@@ -8,7 +8,7 @@ const Reserve = (props) => {
   const { id, reserved } = props;
   const dispatch = useDispatch();
 
-  const reserve = () => {
+  const toggleReservations = () => {
     dispatch(reserveRocket(id));
   };
 
@@ -17,7 +17,7 @@ const Reserve = (props) => {
   return (
     <button
       className="reserve-btn"
-      onClick={reserve}
+      onClick={toggleReservations}
       type="button"
       style={{
         backgroundColor: reserved ? '#a3a3a310' : '#2897ff',
