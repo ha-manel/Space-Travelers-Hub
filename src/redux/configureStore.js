@@ -3,11 +3,12 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import dragons from './dragons/dragons';
 import rockets from './rockets/rockets';
+import missions from './missions/missions';
 
 const rootReducer = combineReducers({
   rockets,
   dragons,
-  // missions,
+  missions,
 });
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 

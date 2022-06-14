@@ -15,6 +15,10 @@ const Nav = () => {
       text: 'Dragons',
     },
     {
+      path: 'missions',
+      text: 'Missions',
+    },
+    {
       path: 'profile',
       text: 'My Profile',
     },
@@ -27,7 +31,7 @@ const Nav = () => {
       <ul className="navUl">
         {links.map((link) => (
           <li key={link.path}>
-            <NavLink to={link.path}>
+            <NavLink to={link.path} className="nav-link">
               <span>{link.text.toUpperCase()}</span>
             </NavLink>
           </li>
