@@ -16,14 +16,9 @@ const Reserve = (props) => {
 
   return (
     <button
-      className="reserve-btn"
+      className={`reserve-btn ${reserved ? 'is-reserved' : 'is-not-reserved'}`}
       onClick={toggleReservations}
       type="button"
-      style={{
-        backgroundColor: reserved ? '#a3a3a310' : '#2897ff',
-        border: reserved ? '1px solid #b5b8bb' : 'none',
-        color: reserved ? '#666' : '#fff',
-      }}
     >
       {text}
     </button>
