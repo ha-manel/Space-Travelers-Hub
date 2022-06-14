@@ -23,3 +23,19 @@
   border-radius: 6px;
   color: white;
 }
+
+.regularBtn {
+  background-color: #007bff;
+  padding: 10px 10px;
+  border-radius: 4px;
+  color: #fff;
+  border: none;
+}
+
+.reservedBtn {
+  background-color: #fff;
+  color: #a6abaf;
+  padding: 10px 10px;
+  border-radius: 4px;
+  border: 1px solid #c4c7ca;
+}
