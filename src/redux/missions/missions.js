@@ -3,9 +3,11 @@ import SpacesxService from '../../services/SpacexService';
 // Action
 const LOAD_MISSIONS = 'spacehub/missions/LOAD_MISSIONS';
 const JOIN_MISSION = 'spacehub/missions/JOIN_MISSION';
+const LEAVE_MISSION = 'spacehub/missions/LEAVE_MISSION';
 
 // Action creators
 const joinMission = (id) => ({ type: JOIN_MISSION, payload: id });
+const leaveMission = (id) => ({ type: LEAVE_MISSION, payload: id });
 
 // Reducer
 export default function missions(state = [], action = {}) {
@@ -18,6 +20,13 @@ export default function missions(state = [], action = {}) {
           return mission;
         }
         return { ...mission, reserved: true };
+      })];
+    case LEAVE_MISSION:
+      return [...state.map((mission) => {
+        if (mission.mission_id !== action.payload) {
+          return mission;
+        }
+        return { ...mission, reserved: false };
       })];
     default:
       return state;
@@ -42,4 +51,4 @@ const fetchMissions = async (dispatch, getState) => {
   }
 };
 
-export { fetchMissions, joinMission };
+export { fetchMissions, joinMission, leaveMission };
