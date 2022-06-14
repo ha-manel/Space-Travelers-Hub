@@ -16,3 +16,10 @@
 .dragonImg {
   width: 100%;
 }
+
+.dragonReservedBadge {
+  padding: 4px 8px;
+  background-color: #18a2b8;
+  border-radius: 6px;
+  color: white;
+}
