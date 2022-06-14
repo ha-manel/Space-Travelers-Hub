@@ -21,7 +21,11 @@ const Rockets = () => {
             <img src={rocket.flickr_images} alt={rocket.name} className="rocket-img" />
             <div className="rocket-info">
               <span className="rocket-name">{rocket.name}</span>
-              <span className="rocket-description">{rocket.description}</span>
+              <span className="rocket-description">
+                <small className="reserved">Reserved</small>
+                {rocket.description}
+              </span>
+              <button className="reserve-btn" type="button">Reserve Rocket</button>
             </div>
           </li>
         ))}
