@@ -26,11 +26,10 @@ export const getRockets = async (dispatch, getState) => {
       name: rocket.rocket_name,
       description: rocket.description,
       flickr_images: rocket.flickr_images[0],
+      reserved: false,
     }));
     dispatch({ type: ADD_ALL_ROCKETS, payload: rockets });
   }
 };
 
-export const reserveRocket = (id) => {
-  return { type: RESERVE_ROCKET, payload: id };
-};
+export const reserveRocket = (id) => ({ type: RESERVE_ROCKET, payload: id });
