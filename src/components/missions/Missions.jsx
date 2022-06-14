@@ -36,7 +36,12 @@ const Missions = () => {
               <td className="mission-name">{mission.mission_name}</td>
               <td>{mission.description}</td>
               <td className="status">
-                <span>NOT A MEMBER</span>
+                {!mission.reserved && (
+                  <span>NOT A MEMBER</span>
+                )}
+                {mission.reserved && (
+                  <span style={{ backgroundColor: '#18a2b8' }}>Active Member</span>
+                )}
               </td>
               <td className="join-mission">
                 {!mission.reserved && (
