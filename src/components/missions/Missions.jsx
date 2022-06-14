@@ -1,7 +1,7 @@
 import './missions.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions, joinMission, leaveMission } from '../../redux/missions/missions';
+import { fetchMissions, changeStatus } from '../../redux/missions/missions';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missions);
@@ -11,12 +11,8 @@ const Missions = () => {
     dispatch(fetchMissions);
   }, []);
 
-  const join = (id) => {
-    dispatch(joinMission(id));
-  };
-
-  const leave = (id) => {
-    dispatch(leaveMission(id));
+  const toggleStatus = (id) => {
+    dispatch(changeStatus(id));
   };
 
   return (
@@ -36,33 +32,23 @@ const Missions = () => {
               <td className="mission-name">{mission.mission_name}</td>
               <td>{mission.description}</td>
               <td className="status">
-                {!mission.reserved && (
-                  <span>NOT A MEMBER</span>
-                )}
+                {!mission.reserved && <span>NOT A MEMBER</span>}
                 {mission.reserved && (
                   <span style={{ backgroundColor: '#18a2b8' }}>Active Member</span>
                 )}
               </td>
               <td className="join-mission">
-                {!mission.reserved && (
-                  <button
-                    type="button"
-                    className="join-btn"
-                    onClick={() => join(mission.mission_id)}
-                  >
-                    Join Mission
-                  </button>
-                )}
-                {mission.reserved && (
-                  <button
-                    type="button"
-                    className="join-btn"
-                    onClick={() => leave(mission.mission_id)}
-                    style={{ color: '#d90429', borderColor: '#d90429' }}
-                  >
-                    Leave Mission
-                  </button>
-                )}
+                <button
+                  type="button"
+                  className="join-btn"
+                  onClick={() => toggleStatus(mission.mission_id)}
+                  style={{
+                    borderColor: mission.reserved ? '#d90429' : '#343a40',
+                    color: mission.reserved ? '#d90429' : '#343a40',
+                  }}
+                >
+                  {mission.reserved ? 'Leave Mission' : 'Join Mission'}
+                </button>
               </td>
             </tr>
           ))}
