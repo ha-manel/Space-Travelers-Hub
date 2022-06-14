@@ -1,0 +1,25 @@
+.dragonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.dragonImgContainer {
+  flex-basis: 25%;
+}
+
+.dragonInfo {
+  flex-basis: 75%;
+}
+
+.dragonImg {
+  width: 100%;
+}
+
+.dragonReservedBadge {
+  padding: 4px 8px;
+  background-color: #18a2b8;
+  border-radius: 6px;
+  color: white;
+}
