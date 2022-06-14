@@ -15,7 +15,16 @@ const Reserve = (props) => {
   const text = reserved ? 'Cancel Reservation' : 'Reserve Rocket';
 
   return (
-    <button className="reserve-btn" onClick={reserve} type="button">
+    <button
+      className="reserve-btn"
+      onClick={reserve}
+      type="button"
+      style={{
+        backgroundColor: reserved ? '#a3a3a310' : '#2897ff',
+        border: reserved ? '1px solid #b5b8bb' : 'none',
+        color: reserved ? '#666' : '#fff',
+      }}
+    >
       {text}
     </button>
   );
