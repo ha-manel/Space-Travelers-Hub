@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRockets } from '../../redux/rockets/rockets';
+import Reserve from './Reserve/Reserve';
 
 import './Rockets.css';
 
@@ -22,10 +23,10 @@ const Rockets = () => {
             <div className="rocket-info">
               <span className="rocket-name">{rocket.name}</span>
               <span className="rocket-description">
-                <small className="reserved">Reserved</small>
+                {rocket.reserved && (<small className="reserved">Reserved</small>)}
                 {rocket.description}
               </span>
-              <button className="reserve-btn" type="button">Reserve Rocket</button>
+              <Reserve id={rocket.id} reserved={rocket.reserved} />
             </div>
           </li>
         ))}

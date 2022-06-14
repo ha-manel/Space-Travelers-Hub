@@ -2,31 +2,22 @@ import SpacesxService from '../../services/SpacexService';
 
 // Action
 const LOAD_MISSIONS = 'spacehub/missions/LOAD_MISSIONS';
-const JOIN_MISSION = 'spacehub/missions/JOIN_MISSION';
-const LEAVE_MISSION = 'spacehub/missions/LEAVE_MISSION';
+const CHANGE_STATUS = 'spacehub/missions/CHANGE_STATUS';
 
 // Action creators
-const joinMission = (id) => ({ type: JOIN_MISSION, payload: id });
-const leaveMission = (id) => ({ type: LEAVE_MISSION, payload: id });
+const changeStatus = (id) => ({ type: CHANGE_STATUS, payload: id });
 
 // Reducer
 export default function missions(state = [], action = {}) {
   switch (action.type) {
     case LOAD_MISSIONS:
       return action.payload;
-    case JOIN_MISSION:
+    case CHANGE_STATUS:
       return [...state.map((mission) => {
         if (mission.mission_id !== action.payload) {
           return mission;
         }
-        return { ...mission, reserved: true };
-      })];
-    case LEAVE_MISSION:
-      return [...state.map((mission) => {
-        if (mission.mission_id !== action.payload) {
-          return mission;
-        }
-        return { ...mission, reserved: false };
+        return { ...mission, reserved: !mission.reserved };
       })];
     default:
       return state;
@@ -51,4 +42,4 @@ const fetchMissions = async (dispatch, getState) => {
   }
 };
 
-export { fetchMissions, joinMission, leaveMission };
+export { fetchMissions, changeStatus };
