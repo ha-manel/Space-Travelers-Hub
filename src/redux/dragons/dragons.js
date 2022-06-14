@@ -2,6 +2,7 @@ import SpacesxService from '../../services/SpacexService';
 
 const DRAGONS_FETCHED = 'spacehub/dragons/DRAGONS_FETCHED';
 const DRAGON_RESERVED = 'spacehub/dragons/DRAGON_RESERVED';
+const CANCEL_DRAGON_RESERVATION = 'spacehub/dragons/CANCEL_DRAGON_RESERVATION';
 
 async function fetchDragons(dispatch, getState) {
   const { dragons: currentDragons } = getState();
@@ -26,6 +27,13 @@ function reserveDragon(id) {
   };
 }
 
+function cancelDragonReservation(id) {
+  return {
+    type: CANCEL_DRAGON_RESERVATION,
+    payload: id,
+  };
+}
+
 export default function dragons(state = [], action) {
   switch (action.type) {
     case DRAGON_RESERVED:
@@ -42,4 +50,4 @@ export default function dragons(state = [], action) {
   }
 }
 
-export { fetchDragons, reserveDragon };
+export { fetchDragons, reserveDragon, cancelDragonReservation };
