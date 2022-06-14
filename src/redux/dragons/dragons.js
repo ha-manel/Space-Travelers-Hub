@@ -1,4 +1,4 @@
-import axios from 'axios';
+import SpacesxService from '../../services/SpacexService';
 
 const DRAGONS_FETCHED = 'spacehub/dragons/DRAGONS_FETCHED';
 const DRAGON_RESERVED = 'spacehub/dragons/DRAGON_RESERVED';
@@ -7,7 +7,7 @@ async function fetchDragons(dispatch, getState) {
   const { dragons: currentDragons } = getState();
 
   if (currentDragons.length === 0) {
-    const { data } = await axios.get('https://api.spacexdata.com/v3/dragons');
+    const { data } = await SpacesxService.getDragons();
     const fetchedDragons = data.map((dragon) => ({
       id: dragon.id,
       name: dragon.name,

@@ -1,0 +1,18 @@
+.dragonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.dragonImgContainer {
+  flex-basis: 25%;
+}
+
+.dragonInfo {
+  flex-basis: 75%;
+}
+
+.dragonImg {
+  width: 100%;
+}
