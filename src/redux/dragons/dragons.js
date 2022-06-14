@@ -21,9 +21,9 @@ async function fetchDragons(dispatch, getState) {
 
 function reserveDragon(id) {
   return {
-    tyoe: DRAGON_RESERVED,
+    type: DRAGON_RESERVED,
     payload: id,
-  }
+  };
 }
 
 export default function dragons(state = [], action) {
@@ -32,7 +32,7 @@ export default function dragons(state = [], action) {
       return state.map((dragon) => {
         if (dragon.id === action.payload) {
           return { ...dragon, reserved: true };
-        };
+        }
         return dragon;
       });
     case DRAGONS_FETCHED:
