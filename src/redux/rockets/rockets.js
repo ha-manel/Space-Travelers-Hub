@@ -17,7 +17,7 @@ export const getRockets = async (dispatch, getState) => {
     const { data } = await SpacesxService.getRockets();
     const rockets = data.map((rocket) => ({
       id: rocket.id,
-      rocket_name: rocket.name,
+      name: rocket.rocket_name,
       description: rocket.description,
       flickr_images: rocket.flickr_images[0],
     }));
