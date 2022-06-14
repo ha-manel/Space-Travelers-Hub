@@ -59,6 +59,10 @@ h1 {
   background-color: #fafafa;
 }
 
+.nav-link {
+  text-decoration: none;
+}
+
 .nav-link.active {
   text-decoration: underline;
 }
