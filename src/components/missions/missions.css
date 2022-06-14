@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 #missions-section {
   margin: 30px;
+}
+
+table {
+  font-family: 'Montserrat', sans-serif;
+  border-collapse: collapse;
 }
 
 td,
@@ -10,7 +17,7 @@ th {
 }
 
 th {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 tr:nth-child(even) {
@@ -19,28 +26,32 @@ tr:nth-child(even) {
 
 .mission-name {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .status,
 .join-mission {
-  width: 150px;
+  width: 130px;
   text-align: center;
 }
 
 .status span {
   background-color: #6d757d;
   color: #fff;
-  font-weight: bold;
-  font-size: 13px;
+  font-weight: 600;
+  font-size: 12px;
   padding: 4px 8px;
   border-radius: 4px;
 }
 
 .join-btn {
+  cursor: pointer;
   background-color: transparent;
-  padding: 6px;
-  border-color: #6d757d;
-  color: #6d757d;
+  color: #343A40;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  border-color: #343A40;
   border-radius: 4px;
+  padding: 8px;
 }
