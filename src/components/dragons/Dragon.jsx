@@ -23,8 +23,13 @@ const Dragon = ({ dragon }) => {
           Type:
           {dragon.type}
         </p>
-        {!dragon.reserved && (<button type="button" onClick={toggleReservationStatus}>Reserve Dragon</button>)}
-        {dragon.reserved && (<button type="button" onClick={toggleReservationStatus}>Cancel Reservation</button>)}
+        <button
+          type="button"
+          onClick={toggleReservationStatus}
+          className={dragon.reserved ? styles.regularBtn : styles.reservedBtn}
+        >
+          {dragon.reserved ? 'Cancel Reservation' : 'Reserve Dragon'}
+        </button>
       </div>
     </li>
   );
