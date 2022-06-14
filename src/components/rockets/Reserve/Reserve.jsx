@@ -8,14 +8,18 @@ const Reserve = (props) => {
   const { id, reserved } = props;
   const dispatch = useDispatch();
 
-  const reserve = () => {
+  const toggleReservations = () => {
     dispatch(reserveRocket(id));
   };
 
   const text = reserved ? 'Cancel Reservation' : 'Reserve Rocket';
 
   return (
-    <button className="reserve-btn" onClick={reserve} type="button">
+    <button
+      className={`reserve-btn ${reserved ? 'is-reserved' : 'is-not-reserved'}`}
+      onClick={toggleReservations}
+      type="button"
+    >
       {text}
     </button>
   );

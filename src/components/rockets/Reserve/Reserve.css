@@ -2,8 +2,17 @@
   width: fit-content;
   height: min-content;
   padding: 4px 12px;
-  border: none;
-  background-color: rgb(40, 151, 255);
   border-radius: 4px;
-  color: white;
+}
+
+.is-reserved {
+  background-color: #a3a3a310;
+  border: 1px solid #b5b8bb;
+  color: #666;
+}
+
+.is-not-reserved {
+  background-color: #2897ff;
+  border: none;
+  color: #fff;
 }
