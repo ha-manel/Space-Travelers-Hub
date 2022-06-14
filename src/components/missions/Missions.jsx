@@ -1,7 +1,7 @@
 import './missions.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions, joinMission } from '../../redux/missions/missions';
+import { fetchMissions, joinMission, leaveMission } from '../../redux/missions/missions';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missions);
@@ -10,6 +10,14 @@ const Missions = () => {
   useEffect(() => {
     dispatch(fetchMissions);
   }, []);
+
+  const join = (id) => {
+    dispatch(joinMission(id));
+  };
+
+  const leave = (id) => {
+    dispatch(leaveMission(id));
+  };
 
   return (
     <div id="missions-section">
@@ -31,13 +39,25 @@ const Missions = () => {
                 <span>NOT A MEMBER</span>
               </td>
               <td className="join-mission">
-                <button
-                  type="button"
-                  className="join-btn"
-                  onClick={() => dispatch(joinMission(mission.mission_id))}
-                >
-                  {mission.reserved ? 'Leave Mission' : 'Join Mission'}
-                </button>
+                {!mission.reserved && (
+                  <button
+                    type="button"
+                    className="join-btn"
+                    onClick={() => join(mission.mission_id)}
+                  >
+                    Join Mission
+                  </button>
+                )}
+                {mission.reserved && (
+                  <button
+                    type="button"
+                    className="join-btn"
+                    onClick={() => leave(mission.mission_id)}
+                    style={{ color: '#d90429', borderColor: '#d90429' }}
+                  >
+                    Leave Mission
+                  </button>
+                )}
               </td>
             </tr>
           ))}
