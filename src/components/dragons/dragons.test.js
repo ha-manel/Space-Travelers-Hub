@@ -30,6 +30,13 @@ describe("The Dragons page component", () => {
     await axios.get.mockResolvedValue(resp)
   });
 
+  afterEach(() => {
+    store.dispatch({
+      type: "spacehub/dragons/DRAGONS_FETCHED",
+      payload: [],
+    });
+  });
+
   it("should render the page", async () => {
     render(<Provider store={store}><Dragons /></Provider>)
     await waitFor(() => {
@@ -43,9 +50,22 @@ describe("The Dragons page component", () => {
     const buttons = await screen.findAllByText('Reserve Dragon');
     fireEvent.click(buttons[0]);
 
-    const reserved = await screen.findAllByText('Reserved')
+    const reservedBadge = await screen.findAllByText('Reserved')
     const cancelButtons = await screen.findAllByText('Cancel Reservation')
-    expect(reserved.length).toBe(1);
+    expect(reservedBadge.length).toBe(1);
     expect(cancelButtons.length).toBe(1);
   });
+
+  it("should cancel a reservation when the user clicks the cancel reservation button", async () => {
+    render(<Provider store={store}><Dragons /></Provider>);
+    const reserveButtons = await screen.findAllByText('Reserve Dragon');
+    fireEvent.click(reserveButtons[0]);
+
+    const cancelButtons = await screen.findAllByText('Cancel Reservation');
+    fireEvent.click(cancelButtons[0]);
+
+    const buttons = await screen.findAllByText('Reserve Dragon');
+
+    expect(buttons.length).toBe(2)
+  })
 })
