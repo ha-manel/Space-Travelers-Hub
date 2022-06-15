@@ -88,9 +88,9 @@ describe('The Dragons page component', () => {
     });
   });
 
-  it("should mantain the snapshot between renders", async () => {
+  it('should mantain the snapshot between renders', async () => {
     const dom = render(<Provider store={store}><Dragons /></Provider>);
 
     await act(() => expect(dom).toMatchSnapshot());
-  })
+  });
 });
