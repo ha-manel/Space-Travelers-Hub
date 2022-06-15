@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,6 +47,7 @@
     "@babel/core": "^7.18.5",
     "@babel/eslint-parser": "^7.18.2",
     "@babel/plugin-syntax-jsx": "^7.17.12",
+    "@babel/plugin-transform-modules-commonjs": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@testing-library/react": "^13.3.0",
     "eslint": "^7.32.0",
