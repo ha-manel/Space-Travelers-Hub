@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+#profile-section {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 15% 20px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+#profile-section > div {
+  margin: 20px;
+}
+
+ul {
+  margin-top: 40px;
+}
+
+.list-item {
+  width: 200px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
