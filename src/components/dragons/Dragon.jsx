@@ -26,7 +26,7 @@ const Dragon = ({ dragon }) => {
         <button
           type="button"
           onClick={toggleReservationStatus}
-          className={dragon.reserved ? styles.regularBtn : styles.reservedBtn}
+          className={dragon.reserved ? styles.reservedBtn : styles.regularBtn}
         >
           {dragon.reserved ? 'Cancel Reservation' : 'Reserve Dragon'}
         </button>
