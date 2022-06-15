@@ -71,6 +71,16 @@ describe('The Dragons page component', () => {
     expect(buttons.length).toBe(2);
   });
 
+  test("that there is a reserved dragon after making a reservation", async () => {
+    const { unmount } = render(<Provider store={store}><Dragons /></Provider>);
+    const reserveButtons = await screen.findAllByText('Reserve Dragon');
+    fireEvent.click(reserveButtons[0]);
+    unmount();
+
+    render(<Provider store={store}><MyProfile /></Provider>);
+    expect(screen.queryByText('Dragon 1')).not.toBeNull();
+  })
+
   test("that there are no reserved dragons at first MyProfile page component render", async () => {
     render(<Provider store={store}><MyProfile /></Provider>);
     await waitFor(() => {
