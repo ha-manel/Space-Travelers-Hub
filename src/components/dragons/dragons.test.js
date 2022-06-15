@@ -35,4 +35,13 @@ describe("The Dragons page component", () => {
     await waitFor(() => expect(screen.getAllByText('Reserve Dragon').length).toBeGreaterThan(0));
   });
 
+  it("becomes a reserved dragon after a user clicks its reserve button", async () => {
+    render(<Provider store={store}><Dragons /></Provider>);
+    await waitFor(() => {
+      const buttons = screen.queryAllByText('Reserve Dragon');
+      fireEvent.click(buttons[0]);
+    });
+
+    await waitFor(() => expect(screen.getAllByText('Reserved').length).toBe(1));
+  })
 })
