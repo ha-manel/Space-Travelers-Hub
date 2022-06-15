@@ -1,7 +1,11 @@
+import './myProfile.css';
 import React from 'react';
+import JoinedMissions from './JoinedMissions';
 
 const MyProfile = () => (
-  <div>My profile goes here!</div>
+  <div id="profile-section">
+    <JoinedMissions />
+  </div>
 );
 
 export default MyProfile;
