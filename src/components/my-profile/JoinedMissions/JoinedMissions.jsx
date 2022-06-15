@@ -2,9 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const JoinedMissions = () => {
-  const joinedMissions = useSelector((state) => (
-    state.missions.filter((mission) => mission.reserved)
-  ));
+  const joinedMissions = useSelector((state) => state.missions
+    .filter((mission) => mission.reserved));
 
   return (
     <div>
