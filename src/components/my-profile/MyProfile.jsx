@@ -1,7 +1,10 @@
 import React from 'react';
+import ReservedDragons from './ReservedDragons';
 
 const MyProfile = () => (
-  <div>My profile goes here!</div>
+  <div>
+    <ReservedDragons />
+  </div>
 );
 
 export default MyProfile;
