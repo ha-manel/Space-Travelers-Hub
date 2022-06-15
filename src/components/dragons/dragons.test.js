@@ -1,4 +1,4 @@
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent, cleanup } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import Dragons from './Dragons';
 import store from '../../redux/configureStore';
@@ -32,16 +32,20 @@ describe("The Dragons page component", () => {
 
   it("should render the page", async () => {
     render(<Provider store={store}><Dragons /></Provider>)
-    await waitFor(() => expect(screen.getAllByText('Reserve Dragon').length).toBeGreaterThan(0));
+    await waitFor(() => {
+      expect(screen.getAllByText('Reserve Dragon').length).toBeGreaterThan(0);
+    });
+
   });
 
   it("becomes a reserved dragon after a user clicks its reserve button", async () => {
     render(<Provider store={store}><Dragons /></Provider>);
-    await waitFor(() => {
-      const buttons = screen.queryAllByText('Reserve Dragon');
-      fireEvent.click(buttons[0]);
-    });
+    const buttons = await screen.findAllByText('Reserve Dragon');
+    fireEvent.click(buttons[0]);
 
-    await waitFor(() => expect(screen.getAllByText('Reserved').length).toBe(1));
-  })
+    const reserved = await screen.findAllByText('Reserved')
+    const cancelButtons = await screen.findAllByText('Cancel Reservation')
+    expect(reserved.length).toBe(1);
+    expect(cancelButtons.length).toBe(1);
+  });
 })
