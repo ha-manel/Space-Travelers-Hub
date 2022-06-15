@@ -5,6 +5,7 @@ import ReservedRockets from './ReservedRockets/ReservedRockets';
 
 const MyProfile = () => (
   <div id="profile-section">
+    <ReservedDragons />
     <JoinedMissions />
     <ReservedRockets />
   </div>
