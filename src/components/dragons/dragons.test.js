@@ -3,6 +3,7 @@ import {
 } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import Dragons from './Dragons';
+import MyProfile from '../my-profile/MyProfile';
 import store from '../../redux/configureStore';
 import axios from '../../http-common';
 
@@ -69,4 +70,11 @@ describe('The Dragons page component', () => {
     const buttons = await screen.findAllByText('Reserve Dragon');
     expect(buttons.length).toBe(2);
   });
+
+  test("that there are no reserved dragons at first MyProfile page component render", async () => {
+    render(<Provider store={store}><MyProfile /></Provider>);
+    await waitFor(() => {
+      expect(screen.queryByText('You don\'t have dragon reservations yet.')).not.toBeNull()
+    });
+  })
 });
