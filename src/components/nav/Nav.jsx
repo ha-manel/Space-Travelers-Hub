@@ -26,8 +26,10 @@ const Nav = () => {
 
   return (
     <nav className="navBar">
-      <img src={logo} alt="Cool logo." width={60} height={60} />
-      <h1>Space Travelers&apos; Hub</h1>
+      <div className="logo-container">
+        <img src={logo} alt="Cool logo." width={60} height={60} />
+        <h1>Space Travelers&apos; Hub</h1>
+      </div>
       <ul className="navUl">
         {links.map((link) => (
           <li key={link.path}>
