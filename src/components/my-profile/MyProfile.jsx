@@ -1,10 +1,12 @@
 import './myProfile.css';
 import React from 'react';
 import JoinedMissions from './JoinedMissions';
+import ReservedRockets from './ReservedRockets/ReservedRockets';
 
 const MyProfile = () => (
   <div id="profile-section">
     <JoinedMissions />
+    <ReservedRockets />
   </div>
 );
 
