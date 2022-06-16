@@ -48,7 +48,7 @@ const Nav = () => {
         ))}
       </ul>
 
-      <ul className="mobile-navUl" style={{ transform: openMenu ? 'translateX(0)' : 'translateX(100%)' }}>
+      <ul className="mobile-navUl" style={{ transform: openMenu ? 'translateX(0)' : 'translateX(120%)' }}>
         {links.map((link) => (
           <li key={link.path}>
             <NavLink to={link.path} className="nav-link mobile" onClick={() => toggleMenu()}>
