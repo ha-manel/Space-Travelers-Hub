@@ -1,5 +1,5 @@
 import {
-  render, screen, waitFor, fireEvent,
+  render, screen, waitFor, fireEvent, act,
 } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import Rockets from './Rockets';
@@ -44,10 +44,10 @@ describe('Rockets Component', () => {
   });
 
   afterEach(() => {
-    store.dispatch({
+    act(() => store.dispatch({
       type: 'spacehub/rockets/ADD_ALL_ROCKETS',
       payload: [],
-    });
+    }));
   });
 
   it('renders correctly', async () => {
