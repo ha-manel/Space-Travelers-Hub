@@ -112,10 +112,12 @@ tr:nth-child(even) {
   #missions-section {
     margin: 10px;
   }
+
   td,
   th {
     padding: 8px;
   }
+
   th,
   .mission-name {
     font-size: 12px;
