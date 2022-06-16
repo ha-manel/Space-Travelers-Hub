@@ -54,5 +54,13 @@ describe('Rockets Component', () => {
       expect(screen.getAllByText('Reserve Rocket').length).toBeGreaterThan(0);
     });
   });
+
+  it('reserves a rocket on clicking the reserve button', async () => {
+    render(<Provider store={store}><Rockets /></Provider>);
+    const reserveBtns = await screen.findAllByText('Reserve Rocket');
+    fireEvent.click(reserveBtns[0]);
+    const reservedBadges = await screen.findAllByText('Reserved');
+    expect(reservedBadges.length).toBeGreaterThan(0);
+  });
 });
 
