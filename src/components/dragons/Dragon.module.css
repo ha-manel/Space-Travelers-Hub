@@ -6,19 +6,34 @@
 }
 
 .dragonImg {
-  width: 100%;
+  width: 64%;
   border-radius: 2px;
   box-shadow: 1px 1px 10px 1px rgb(202, 202, 202);
 }
 
+.dragonImgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .dragonReservedBadge {
-  padding: 4px 8px;
-  background-color: #18a2b8;
-  border-radius: 6px;
+  width: min-content;
+  height: min-content;
+  padding: 1px 4px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 3px;
+  background-color: rgb(86, 201, 185);
   color: white;
-  font-weight: 500;
-  box-shadow: 1px 1px 3px #18a2b8;
-  margin-right: 1rem;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.dragonInfo {
+  width: 80%;
+  margin: auto;
 }
 
 .btn {
