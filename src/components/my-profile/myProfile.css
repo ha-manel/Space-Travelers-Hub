@@ -3,7 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 0 15% 20px;
+  padding: 0 5% 20px;
 }
 
 h2 {
@@ -11,6 +11,8 @@ h2 {
 }
 
 #profile-section > div {
+  width: 28%;
+  min-width: 200px;
   margin: 20px;
 }
 
@@ -24,4 +26,32 @@ h2 {
   font-weight: 500;
   padding: 10px;
   border: 1px solid #ddd;
+}
+
+@media screen and (max-width: 530px) {
+  #profile-section > div {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #profile-section {
+    padding: 0 10px 10px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  #profile-section > div {
+    margin: 5px;
+  }
+
+  .list-item {
+    font-size: 12px;
+  }
+
+  ul {
+    margin-top: 10px;
+  }
 }

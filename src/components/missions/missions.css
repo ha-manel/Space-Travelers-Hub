@@ -1,5 +1,5 @@
 #missions-section {
-  margin: 30px;
+  margin: 80px 30px 0;
 }
 
 table {
@@ -27,6 +27,14 @@ tr:nth-child(even) {
   font-size: 15px;
 }
 
+.see-more {
+  display: none;
+}
+
+.mission-desc {
+  line-height: 1.4;
+}
+
 .status,
 .join-mission {
   width: 150px;
@@ -51,4 +59,105 @@ tr:nth-child(even) {
   border: 1px solid;
   border-radius: 4px;
   padding: 8px;
+}
+
+@media screen and (max-width: 900px) {
+  th,
+  .mission-name {
+    font-size: 13px;
+  }
+
+  .mission-desc {
+    font-size: 12px;
+  }
+
+  .status span {
+    font-size: 10px;
+  }
+
+  .join-btn {
+    font-size: 12px;
+  }
+
+  .status,
+  .join-mission {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mission-desc,
+  .desc-header {
+    display: none;
+  }
+
+  .see-more {
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+    font-weight: 400;
+    color: #2088ff;
+    text-decoration: underline;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin-top: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #missions-section {
+    margin: 10px;
+  }
+
+  td,
+  th {
+    padding: 8px;
+  }
+
+  th,
+  .mission-name {
+    font-size: 12px;
+  }
+
+  .mission-desc {
+    font-size: 11px;
+  }
+
+  .status span {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+
+  .join-btn {
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .status,
+  .join-mission {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  td,
+  th {
+    padding: 8px;
+  }
+
+  th,
+  .mission-name,
+  .see-more {
+    font-size: 11px;
+  }
+
+  .status span {
+    font-size: 7px;
+  }
+
+  .join-btn {
+    font-size: 9px;
+  }
 }
