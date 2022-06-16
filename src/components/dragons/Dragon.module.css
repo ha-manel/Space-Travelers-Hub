@@ -1,12 +1,8 @@
 .dragonContainer {
   display: flex;
-  justify-content: center;
-  gap: 1em;
-  margin-bottom: 2em;
-}
-
-.dragonImgContainer {
-  flex-basis: 25%;
+  flex-direction: column;
+  margin: 2rem 0.7rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .dragonInfo {
@@ -15,6 +11,7 @@
 
 .dragonImg {
   width: 100%;
+  border-radius: 5px;
 }
 
 .dragonReservedBadge {
@@ -22,12 +19,19 @@
   background-color: #18a2b8;
   border-radius: 6px;
   color: white;
+  font-weight: 500;
+  box-shadow: 1px 1px 3px #18a2b8;
+  margin-right: 1rem;
+}
+
+.btn {
+  padding: 10px 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .regularBtn {
   background-color: #007bff;
-  padding: 10px 10px;
-  border-radius: 4px;
   color: #fff;
   border: none;
 }
@@ -35,7 +39,5 @@
 .reservedBtn {
   background-color: #fff;
   color: #a6abaf;
-  padding: 10px 10px;
-  border-radius: 4px;
   border: 1px solid #c4c7ca;
 }
