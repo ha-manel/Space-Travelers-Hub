@@ -1,8 +1,9 @@
 .reserve-btn {
   width: fit-content;
   height: min-content;
-  padding: 4px 12px;
+  padding: 10px 10px;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .is-reserved {

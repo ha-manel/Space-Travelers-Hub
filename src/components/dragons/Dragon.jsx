@@ -16,17 +16,18 @@ const Dragon = ({ dragon }) => {
         <img src={dragon.flickr_images} alt={dragon.name} className={styles.dragonImg} />
       </div>
       <div className={styles.dragonInfo}>
-        <h2>{dragon.name}</h2>
+        <h3>{dragon.name}</h3>
         <p>
           {dragon.reserved && (<span className={styles.dragonReservedBadge}>Reserved</span>)}
           {' '}
-          Type:
+          <strong>Type:</strong>
+          {' '}
           {dragon.type}
         </p>
         <button
           type="button"
           onClick={toggleReservationStatus}
-          className={dragon.reserved ? styles.reservedBtn : styles.regularBtn}
+          className={dragon.reserved ? `${styles.reservedBtn} ${styles.btn}` : `${styles.regularBtn} ${styles.btn}`}
         >
           {dragon.reserved ? 'Cancel Reservation' : 'Reserve Dragon'}
         </button>
