@@ -1,8 +1,8 @@
 #modal-window {
-  overflow-y: hidden;
-  width: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  width: 100vw;
   height: 100vh;
-  position: absolute;
   top: 0;
   left: 0;
   background-color: rgba(221, 221, 221, 0.8);

@@ -27,3 +27,25 @@ ul {
   padding: 10px;
   border: 1px solid #ddd;
 }
+
+@media screen and (max-width: 400px) {
+  #profile-section {
+    padding: 0 10px 10px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  #profile-section > div {
+    margin: 5px;
+  }
+
+  .list-item {
+    font-size: 12px;
+  }
+
+  ul {
+    margin-top: 10px;
+  }
+}

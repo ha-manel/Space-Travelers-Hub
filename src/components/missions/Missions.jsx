@@ -1,4 +1,3 @@
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import './missions.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -79,16 +78,15 @@ const Missions = () => {
               </td>
             </tr>
           ))}
-          {openModal && (
-            <Description
-              closeModal={setOpenModal}
-              name={modalMission.name}
-              description={modalMission.description}
-            />
-          )}
-          {openModal ? disableBodyScroll(document) : enableBodyScroll(document)}
         </tbody>
       </table>
+      {openModal && (
+        <Description
+          closeModal={setOpenModal}
+          name={modalMission.name}
+          description={modalMission.description}
+        />
+      )}
     </div>
   );
 };

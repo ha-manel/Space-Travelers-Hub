@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+// import { useEffect } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import './description.css';
 
