@@ -1,0 +1,66 @@
+.rockets {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.rocket-list {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.rocket {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rocket-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.rocket-img {
+  width: 80%;
+  height: auto;
+  box-shadow: 1px 1px 10px 1px rgb(202, 202, 202);
+}
+
+.rocket-name {
+  font-weight: 700;
+  font-size: 1.17rem;
+  margin-top: 18.72px;
+}
+
+.rocket-description {
+  font-size: 16px;
+  margin: 16px 0;
+}
+
+.reserved {
+  width: min-content;
+  height: min-content;
+  padding: 1px 4px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 3px;
+  background-color: rgb(86, 201, 185);
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .rocket {
+    flex-wrap: nowrap;
+  }
+
+  .rocket-img {
+    width: 30%;
+  }
+}

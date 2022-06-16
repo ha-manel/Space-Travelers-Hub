@@ -1,0 +1,19 @@
+.reserve-btn {
+  width: fit-content;
+  height: min-content;
+  padding: 10px 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.is-reserved {
+  background-color: #a3a3a310;
+  border: 1px solid #b5b8bb;
+  color: #666;
+}
+
+.is-not-reserved {
+  background-color: #2897ff;
+  border: none;
+  color: #fff;
+}
