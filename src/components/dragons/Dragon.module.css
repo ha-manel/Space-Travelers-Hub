@@ -1,33 +1,49 @@
 .dragonContainer {
   display: flex;
-  justify-content: center;
-  gap: 1em;
-  margin-bottom: 2em;
-}
-
-.dragonImgContainer {
-  flex-basis: 25%;
-}
-
-.dragonInfo {
-  flex-basis: 75%;
+  flex-direction: column;
+  margin: 2rem 0.7rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .dragonImg {
-  width: 100%;
+  width: 64%;
+  border-radius: 2px;
+  box-shadow: 1px 1px 10px 1px rgb(202, 202, 202);
+}
+
+.dragonImgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dragonReservedBadge {
-  padding: 4px 8px;
-  background-color: #18a2b8;
-  border-radius: 6px;
+  width: min-content;
+  height: min-content;
+  padding: 1px 4px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 3px;
+  background-color: rgb(86, 201, 185);
   color: white;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.dragonInfo {
+  width: 80%;
+  margin: auto;
+}
+
+.btn {
+  padding: 10px 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .regularBtn {
   background-color: #007bff;
-  padding: 10px 10px;
-  border-radius: 4px;
   color: #fff;
   border: none;
 }
@@ -35,7 +51,22 @@
 .reservedBtn {
   background-color: #fff;
   color: #a6abaf;
-  padding: 10px 10px;
-  border-radius: 4px;
   border: 1px solid #c4c7ca;
+}
+
+@media screen and (min-width: 768px) {
+  .dragonContainer {
+    flex-direction: row;
+    width: 80%;
+    margin: 40px auto;
+    gap: 12px;
+  }
+
+  .dragonImgContainer {
+    flex-basis: 30%;
+  }
+
+  .dragonInfo {
+    flex-basis: 70%;
+  }
 }
