@@ -8,7 +8,7 @@ const JoinedMissions = () => {
   return (
     <div>
       <h2>My Missions</h2>
-      <ul>
+      <ul className="list">
         {joinedMissions.length > 0
           ? joinedMissions.map((mission) => (
             <li className="list-item" key={mission.mission_id}>
