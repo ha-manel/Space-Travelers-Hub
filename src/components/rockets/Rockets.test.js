@@ -80,6 +80,28 @@ describe('Rockets Component', () => {
     expect(screen.findByText('You have no reserved rockets')).toBeTruthy();
   });
 
+  it('reserves rockets and appear in the profile', async () => {
+    render(<Provider store={store}><Rockets /></Provider>);
+    const reserveBtns = await screen.findAllByText('Reserve Rocket');
+    fireEvent.click(reserveBtns[0]);
+    render(<Provider store={store}><MyProfile/></Provider>);
+    expect(screen.findByText('Falcon 1')).toBeTruthy();
+  });
+
+  it('reserves rockets that appear in the profile, then cancels and the profile is emptied', async () => {
+    render(<Provider store={store}><Rockets /></Provider>);
+    const reserveBtns = await screen.findAllByText('Reserve Rocket');
+    fireEvent.click(reserveBtns[0]);
+    render(<Provider store={store}><MyProfile/></Provider>);
+    expect(screen.findByText('Falcon 1')).toBeTruthy();
+
+    render(<Provider store={store}><Rockets /></Provider>);
+    const cancelResBtns = await screen.findAllByText('Cancel Reservation');
+    fireEvent.click(cancelResBtns[0]);
+    render(<Provider store={store}><MyProfile/></Provider>);
+    expect(screen.findByText('You have no reserved rockets')).toBeTruthy();
+  });
+
   it('maintains the snapshots between renders', async () => {
     const tree = render(<Provider store={store}><Rockets/></Provider>);
     await act(() => expect(tree).toMatchSnapshot());
