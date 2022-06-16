@@ -5,13 +5,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.dragonInfo {
-  flex-basis: 75%;
-}
-
 .dragonImg {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 10px 1px rgb(202, 202, 202);
 }
 
 .dragonReservedBadge {
@@ -40,4 +37,21 @@
   background-color: #fff;
   color: #a6abaf;
   border: 1px solid #c4c7ca;
+}
+
+@media screen and (min-width: 768px) {
+  .dragonContainer {
+    flex-direction: row;
+    width: 80%;
+    margin: 40px auto;
+    gap: 12px;
+  }
+
+  .dragonImgContainer {
+    flex-basis: 30%;
+  }
+  
+  .dragonInfo {
+    flex-basis: 70%;
+  }
 }
