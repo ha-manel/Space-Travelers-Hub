@@ -75,6 +75,11 @@ describe('Rockets Component', () => {
     expect(reserveBtns.length).toStrictEqual(4);
   });
 
+  it('renders no reserved rockets on first load of profile', async () => {
+    render(<Provider store={store}><MyProfile/></Provider>);
+    expect(screen.findByText('You have no reserved rockets')).toBeTruthy();
+  });
+
   it('maintains the snapshots between renders', async () => {
     const tree = render(<Provider store={store}><Rockets/></Provider>);
     await act(() => expect(tree).toMatchSnapshot());
