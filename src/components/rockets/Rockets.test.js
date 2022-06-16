@@ -1,5 +1,5 @@
 import {
-  render, screen, waitFor, fireEvent, act,
+  render, screen, waitFor, fireEvent,
 } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import Rockets from './Rockets';
@@ -42,10 +42,10 @@ describe('Rockets Component', () => {
   });
 
   afterEach(() => {
-    act(() => store.dispatch({
+    store.dispatch({
       type: 'spacehub/rockets/ADD_ALL_ROCKETS',
       payload: [],
-    }));
+    });
   });
 
   it('renders correctly', async () => {
@@ -104,7 +104,7 @@ describe('Rockets Component', () => {
 
   it('maintains the snapshots between renders', async () => {
     const tree = render(<Provider store={store}><Rockets/></Provider>);
-    await act(() => expect(tree).toMatchSnapshot());
+    await expect(tree).toMatchSnapshot();
   });
 });
 
