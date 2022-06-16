@@ -9,7 +9,7 @@ const ReservedRockets = () => {
   return (
     <div>
       <h2>My Rockets</h2>
-      <ul>
+      <ul className="list">
         {reservedRockets.length > 0
           ? reservedRockets.map((rocket) => (
             <li className="list-item" key={rocket.id}>
