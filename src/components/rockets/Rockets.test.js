@@ -62,5 +62,10 @@ describe('Rockets Component', () => {
     const reservedBadges = await screen.findAllByText('Reserved');
     expect(reservedBadges.length).toBeGreaterThan(0);
   });
+
+  it('maintains the snapshots between renders', async () => {
+    const tree = render(<Provider store={store}><Rockets/></Provider>);
+    await act(() => expect(tree).toMatchSnapshot());
+  });
 });
 
